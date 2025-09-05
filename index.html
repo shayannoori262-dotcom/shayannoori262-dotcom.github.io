@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>نام جادویی تو</title>
+ <style>
+ body {
+ background: linear-gradient(to right, #000428, #004e92);
+ color: white;
+ font-family: Arial;
+ text-align: center;
+ padding: 50px;
+ }
+ input, button {
+ padding: 10px;
+ margin: 10px;
+ border: none;
+ border-radius: 5px;
+ }
+ button {
+ background: gold;
+ cursor: pointer;
+ }
+ </style>
+</head>
+<body>
+ <h1>اسمتو وارد کن، نام جادویی تو ظاهر میشه!</h1>
+ <input type="text" id="userName" placeholder="اسمت رو اینجا بنویس...">
+ <button onclick="generateMagicName()">کلیک برای جادو</button>
+ <h2 id="result"></h2>
+
+ <script>
+ function generateMagicName() {
+ let name = document.getElementById("userName").value;
+ let magicWords = ["ساحر", "نجوم", "طلسم", "افسون", "پری", "جادوگر"];
+ let randomWord = magicWords[Math.floor(Math.random() * magicWords.length)];
+ let magicName = name + " " + randomWord;
+ document.getElementById("result").innerText = "نام جادویی تو: " + magicName;
+ }
+ </script>
+</body>
+</html>
